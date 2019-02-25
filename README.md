@@ -16,4 +16,5 @@ To keep a memory tap on the add button. Then, fill the title and the description
 ## Special thanks
 
 To Eden Ben David for shareing on 2dimension.com the file which I modified to create my background.
+
 To Mireia Casa for helping me to give shape to this idea.
