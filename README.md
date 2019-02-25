@@ -1,16 +1,19 @@
-# astra
+# Astra
 
-Astra the memories keeper
+Astra: the memories keeper
+
+## Description
+
+When you keep a memory, it turns into a star and when more memories you keep, more large is your universe.
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is for the Flutter Create contest.
 
-A few resources to get you started if this is your first Flutter project:
+To keep a memory tap on the add button. Then, fill the title and the description. Finally, take a picture about the memory you want to keep. Magically a new star will appear in your universe! To relive a memory, just pick a star and you will see it again.
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+## Special thanks
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+To Eden Ben David for shareing on 2dimension.com the file which I modified to create my background.
+To Mireia Casa for helping me to give shape to this idea.
