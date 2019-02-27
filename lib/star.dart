@@ -5,6 +5,5 @@ class Star {
   String description;
   String starIcon;
   Image image;
-
   Star({this.title, this.description, this.starIcon, this.image});
 }

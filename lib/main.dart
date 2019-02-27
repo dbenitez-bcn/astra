@@ -31,7 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController tfTitle = TextEditingController();
   TextEditingController tfDesc = TextEditingController();
 
-
   void goToPage(int page) {
     _pageController.animateToPage(page,
         duration: const Duration(milliseconds: 250), curve: Curves.easeOut);
@@ -40,9 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     _starsModels = [];
-    _pageController = PageController(
-      initialPage: 1,
-    );
+    _pageController = PageController(initialPage: 1);
     imageNew = Image.asset("assets/noImage.png");
     super.initState();
   }
@@ -77,9 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildFab() {
     return FloatingActionButton(
       child: Icon(Icons.add),
-      onPressed: () {
-        goToPage(2);
-      },
+      onPressed: () => goToPage(2),
     );
   }
 
@@ -132,13 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
         ? _buildMyCard(
             <Widget>[
               ListTile(
+                leading: _buildStarIcon(_starSelected.starIcon, 48.0),
                 title: Text(_starSelected.title),
                 subtitle: Text(_starSelected.description),
               ),
               Container(
-                margin: EdgeInsets.all(16.0),
-                child: _starSelected.image,
-              ),
+                  margin: EdgeInsets.all(16.0), child: _starSelected.image),
             ],
           )
         : _buildStarIcon("assets/greenStar.flr", 64.0);
@@ -155,6 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
           controller: tfDesc,
           decoration: InputDecoration(labelText: "Description"),
         ),
+        SizedBox.fromSize(size: Size.square(8.0)),
         Container(
           height: 200.0,
           child: GestureDetector(
@@ -192,10 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: children,
-            ),
+            child: Column(mainAxisSize: MainAxisSize.min, children: children),
           ),
         ),
       ),
