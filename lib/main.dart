@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Astra',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: MyHomePage(),
     );
@@ -24,24 +24,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Star> _starsModels;
+  List<Star> _starsModels = [];
   Star _starSelected;
-  PageController _pageController;
-  Image imageNew;
+  PageController _pageController = PageController(initialPage: 1);
+  Image imageNew = Image.asset("assets/noImage.png");
   TextEditingController tfTitle = TextEditingController();
   TextEditingController tfDesc = TextEditingController();
 
   void goToPage(int page) {
     _pageController.animateToPage(page,
         duration: const Duration(milliseconds: 250), curve: Curves.easeOut);
-  }
-
-  @override
-  void initState() {
-    _starsModels = [];
-    _pageController = PageController(initialPage: 1);
-    imageNew = Image.asset("assets/noImage.png");
-    super.initState();
   }
 
   @override
@@ -162,6 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         RaisedButton(
+          color: Colors.purple[100],
           child: Text("Add star"),
           onPressed: () {
             Star newStar = Star(
@@ -170,9 +163,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 starIcon: "assets/purpleStar.flr",
                 image: imageNew);
             setState(() {
+              goToPage(1);
+              tfTitle.clear();
+              tfDesc.clear();
               imageNew = Image.asset("assets/noImage.png");
               _starsModels.add(newStar);
-              goToPage(1);
             });
           },
         )
